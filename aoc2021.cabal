@@ -26,6 +26,7 @@ source-repository head
 library
   exposed-modules:
       Day01
+      Day02
   other-modules:
       Paths_aoc2021
   hs-source-dirs:
@@ -33,6 +34,7 @@ library
   build-depends:
       QuickCheck
     , base >=4.7 && <5
+    , parsec
     , random
     , text
     , transformers

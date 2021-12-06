@@ -25,6 +25,7 @@ dependencies:
 - QuickCheck
 - random
 - transformers
+- parsec
 
 library:
   source-dirs: src
