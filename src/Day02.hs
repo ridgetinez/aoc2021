@@ -4,7 +4,7 @@ import Data.Either
 import Data.Bifunctor
 import Text.ParserCombinators.Parsec
 
-{- 
+{-
 Parsing
 Already kind of familiar with why applicative, but now how applicative.
 This link changed that for me: https://www.fpcomplete.com/haskell/tutorial/applicative-syntax/
@@ -13,8 +13,9 @@ commands :: GenParser Char st [(String,Int)]
 commands = many command <* eof
 
 command :: GenParser Char st (String,Int)
-command = (,) <$> many letter <* char ' ' <*> 
-              (read <$> many digit) <* many (char '\n')
+command = (,)
+    <$> many letter <* char ' '
+    <*> (read <$> many digit) <* many (char '\n')
 
 parseCommands :: String -> Either ParseError [(String,Int)]
 parseCommands = parse commands "(unknown)"
